@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "status": "Active",
+      "supplierName": "Jakub Zavazal",
+      "month": "March",
+      "phase": "Deployment",
+      "internalOrderId": 10024234,
+      "amount": 5120
+    },
+    {
+      "id": "2",
+      "status": "Active",
+      "supplierName": "Jonathan Holden",
+      "month": "April",
+      "phase": "Research",
+      "internalOrderId": 10024299,
+      "amount": 5120
+    },
+    {
+      "id": "3",
+      "status": "Pending approval",
+      "supplierName": "Miguel Zavala",
+      "month": "March",
+      "phase": "Deployment",
+      "internalOrderId": 10023211,
+      "amount": 4430
+    },
+    {
+      "id": "4",
+      "status": "Pending approval",
+      "supplierName": "Vlad Titus Tudor",
+      "month": "February",
+      "phase": "Development",
+      "internalOrderId": 10024567,
+      "amount": 3320
+    },
+    {
+      "id": "5",
+      "status": "Waiting compensation",
+      "supplierName": "Aleksey Romanyuk",
+      "month": "February",
+      "phase": "Development",
+      "internalOrderId": 10024023,
+      "amount": 5120
+    },
+    {
+      "id": "6",
+      "status": "Waiting compensation",
+      "supplierName": "Carlos Francisco Rocha Ceballos",
+      "month": "April",
+      "phase": "Research",
+      "internalOrderId": 10039493,
+      "amount": 5300
+    }
+  ]
+}
