@@ -1,0 +1,29 @@
+<div class="card-container">
+  <div *ngIf="order" class="card">
+    <div class="card-header">
+      <span class="status">
+             <div class="status-indicator"
+                  [ngStyle]="{'background-color': order.status | orderStatusToColor}"></div>
+        {{ order.status }}</span>
+      <span class="amount">{{ order.amount | currency }}</span>
+    </div>
+    <div class="tab-content">
+      <div class="row">
+        <span class="header">Supplier Name</span>
+        <span class="data">{{ order.supplierName }}</span>
+      </div>
+      <div class="row">
+        <span class="header">Month</span>
+        <span class="data">{{ order.month }}</span>
+      </div>
+      <div class="row">
+        <span class="header">Internal Order</span>
+        <span class="data">{{ order.internalOrderId }}</span>
+      </div>
+      <div class="row">
+        <span class="header">Phase</span>
+        <span class="data">{{ order.phase }}</span>
+      </div>
+    </div>
+  </div>
+</div>

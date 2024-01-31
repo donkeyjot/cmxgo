@@ -1,0 +1,25 @@
+<div class="filter-container">
+  <div class="filter-group" [formGroup]="filtersGroup">
+    <div>
+      <input
+        type="checkbox"
+        id="active"
+        [formControl]="filtersGroup.controls.active">
+      <label for="active">Active</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        id="pendingApproval"
+        [formControl]="filtersGroup.controls.pendingApproval">
+      <label for="pendingApproval">Pending Approval</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        id="waitingCompensation"
+        [formControl]="filtersGroup.controls.waitingCompensation">
+      <label for="waitingCompensation">Waiting Compensation</label>
+    </div>
+  </div>
+</div>

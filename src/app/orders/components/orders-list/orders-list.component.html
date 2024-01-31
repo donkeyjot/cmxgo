@@ -1,0 +1,80 @@
+<div class="orders-container">
+  <app-order-filter class="order-filter" (filters)="filterData($event)"></app-order-filter>
+  <ng-container *ngIf="(screenWidth$ | async) as screenWidth">
+    <ng-container *ngIf="screenWidth > 600; else mobileView">
+      <div class="table-container">
+        <table>
+          <thead>
+          <tr>
+            <th>Status</th>
+            <th>Supplier Name</th>
+            <th>Month</th>
+            <th>Phase</th>
+            <th>Internal Order</th>
+            <th>Amount (USD)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngIf="!(loading$ | async); else loadingBlock">
+            <ng-container *ngIf="orders$ | async as orders; else noDataBlock">
+              <ng-container *ngFor="let order of orders">
+                <tr>
+                  <td class="status">
+                    <div class="status-indicator"
+                         [ngStyle]="{'background-color': order.status | orderStatusToColor}"></div>
+                    {{ order.status }}
+                  </td>
+                  <td>
+                    {{ order.supplierName }}
+                  </td>
+                  <td>
+                    {{ order.month }}
+                  </td>
+                  <td>
+                    {{ order.phase }}
+                  </td>
+                  <td>
+                    {{ order.internalOrderId }}
+                  </td>
+                  <td class="amount">
+                    {{ order.amount | currency }}
+                  </td>
+                </tr>
+              </ng-container>
+            </ng-container>
+
+
+            <ng-template #noDataBlock>
+              <p>Shame, I have no data!</p>
+            </ng-template>
+          </ng-container>
+
+          <ng-template #loadingBlock>
+            <p>Haha, trying to get some data...</p>
+          </ng-template>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+
+    <ng-template #mobileView>
+      <ng-container *ngIf="!(loading$ | async); else loadingMobileBlock">
+        <ng-container *ngIf="orders$ | async as orders; else noDataMobileBlock">
+          <div class="tabs-container">
+            <ng-container *ngFor="let order of orders">
+              <app-order-card [order]="order"></app-order-card>
+            </ng-container>
+          </div>
+        </ng-container>
+        <ng-template #noDataMobileBlock>
+          <p>Shame, I have no data!</p>
+        </ng-template>
+      </ng-container>
+
+      <ng-template #loadingMobileBlock>
+        <p>Haha, trying to get some data...</p>
+      </ng-template>
+
+    </ng-template>
+  </ng-container>
+</div>
