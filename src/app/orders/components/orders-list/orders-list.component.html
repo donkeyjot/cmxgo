@@ -19,10 +19,14 @@
             <ng-container *ngIf="orders$ | async as orders; else noDataBlock">
               <ng-container *ngFor="let order of orders">
                 <tr>
-                  <td class="status">
-                    <div class="status-indicator"
-                         [ngStyle]="{'background-color': order.status | orderStatusToColor}"></div>
-                    {{ order.status }}
+                  <td>
+                    <div class="status-container">
+                      <div class="status-indicator"
+                           [ngStyle]="{'background-color': order.status | orderStatusToColor}"></div>
+                      <div>
+                        {{ order.status }}
+                      </div>
+                    </div>
                   </td>
                   <td>
                     {{ order.supplierName }}
