@@ -9,14 +9,13 @@ import {OrderStatusEnum} from "../../enums/order-status.enum";
 import {filteredOrders, loading} from "../../orders.selectors";
 import {AsyncPipe, CurrencyPipe, NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {OrdersActions} from "../../action-types";
-import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {OrderCardComponent} from "../order-card/order-card.component";
 import {OrderStatusToColorPipe} from "../../pipes/order-status-to-color.pipe";
 
 @Component({
   selector: 'app-orders-list',
   standalone: true,
-  imports: [ReactiveFormsModule, OrderFilterComponent, NgIf, AsyncPipe, NgForOf, MatCard, MatCardTitle, MatCardContent, CurrencyPipe, OrderCardComponent, NgStyle, NgClass, OrderStatusToColorPipe],
+  imports: [ReactiveFormsModule, OrderFilterComponent, NgIf, AsyncPipe, NgForOf, CurrencyPipe, OrderCardComponent, NgStyle, NgClass, OrderStatusToColorPipe],
   templateUrl: './orders-list.component.html',
   styleUrl: './orders-list.component.scss'
 })
