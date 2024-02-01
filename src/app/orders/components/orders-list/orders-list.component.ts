@@ -51,6 +51,4 @@ export class OrdersListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.filters$.unsubscribe();
   }
-
-  protected readonly Number = Number;
 }

@@ -44,6 +44,4 @@ export class OrderFilterComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
-  protected readonly OrderStatusEnum = OrderStatusEnum;
 }
