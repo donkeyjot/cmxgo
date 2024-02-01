@@ -43,12 +43,14 @@ table tbody tr {
 
   .status-container {
     display: flex;
-    align-content: flex-start;
+    align-content: center;
+    justify-content: flex-start;
     gap: 8px;
   }
   .status-indicator {
-    width: 1.5rem;
-    height: 1rem;
+    align-self: center;
+    min-width: 24px;
+    height: 16px;
     border-radius: 2px;
   }
 
